@@ -1,0 +1,7 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/conf/application.conf,/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/target/scala-2.10/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/conf/evolutions,/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/target/scala-2.10/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/conf/play.plugins,/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/target/scala-2.10/classes/play.plugins)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/conf/routes,/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/target/scala-2.10/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/conf/evolutions/default,/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/target/scala-2.10/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/conf/evolutions/default/1.sql,/Users/Dano/Google Drive/Master/Cloud computing/Cloud/ejemploResuelto/target/scala-2.10/classes/evolutions/default/1.sql)[0m
