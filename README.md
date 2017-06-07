@@ -31,7 +31,7 @@ El **presenter** contiene toda la lógica **no visual** de la interfaz:
 La **vista** se encarga de saber cómo mostrar la información que le proporciona el presenter. **No** conoce el modelo de negocio, pero sí el **View model**. El view model es una transformación del modelo de negocio que conoce la vista. La vista sabe cómo representar un objeto view model pero no debería saber cómo representar un objeto de negocio.
 Normalmente la transformación de un objeto de modelo a un view model se realiza a través de un **mapper** o de un **wrapper**. Ambos crean un objeto view model de uno de modelo pero, mientras que el primero crea un view model a partir del modelo, el segundo envuelve el objeto del modelo en un view model. En general, utilizaremos el primer método cuando view model y model no tengan mucho que ver y el segundo cuando ambos sean muy parecidos.
 
-La vista tiene una referencia al presenter provista mediante inyección de dependencias y es la encargada de establecer en el presenter la referencia a sí misma. Cada vez que ocurra un evento deberá delegar en el presenter y será este el que decida qué hacer.
+La vista tiene una referencia al presenter provista mediante inyección de dependencias y es la encargada de establecer en el presenter la referencia a sí misma. Cada vez que ocurra un evento deberá delegar en el presenter y será este el que decida qué hacer. La vista es **pasiva**, es decir, nunca pregunta al presenter sobre los datos que tiene que mostrar sino que es el presenter el que envía los datos a la vista cuando haya algo que mostrar.
 
 El **navegador** (o *navigator*) es el encargado de controlar el flujo de la aplicación. Ante ciertos eventos el presenter delega en el navigator para que decida qué se tiene que hacer o qué pantalla hay que mostrar.
 
@@ -45,6 +45,16 @@ Aunque no existe una manera única de aplicar este patrón, MEDUSA recomienda se
 - **Sí** es obligatorio tener una interfaz para la vista.
 
 ## Domain
+Dominio es la capa más importante de una aplicación ya que define el comportamiento de la misma. Está dividida en **casos de uso**. Por caso de uso entendemos una secuencia o flujo de interacciones entre distintos subsistemas o componentes para realizar una función determinada. Normalmente suelen estar relacionados con requisitos funcionales aunque no necesariamente tiene que ser así. Los casos de uso deben ser pequeños y bien definidos.
+Como se explicaba previamente, dominio tiene que ser una capa totalmente independiente de las demás y tiene que poder funcionar por sí misma independientemente de las otras.
+Es la capa de aplicación exclusivamente la que se comunica con dominio. El punto de entrada son los casos de uso.
+
+![diagrama de componentes][componentsDiagram]
+
+Dominio
+
+
+
 ## Data
 ***
 
@@ -53,6 +63,7 @@ Aunque no existe una manera única de aplicar este patrón, MEDUSA recomienda se
 [dependencyRules]: /imgs/medusa_layers.jpg "Reglas de dependencia"
 [mvpMvcDifferences]: /imgs/mvp_mvc_differences.png "Diferencias entre MVC y MVP"
 [presentationDiagram]: /imgs/presentation_diagram.png "Diagrama de presentación"
+[componentsDiagram]: /imgs/components_diagram.png "Diagrama de componentes"
 
 
 
