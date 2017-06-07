@@ -11,6 +11,13 @@ Para tener una aplicación mantenible, poco acoplada y altamente cohesiva se hac
 - Domain.
 - Data.
 
+![reglas de dependencia][dependencyRules]
+
+
+
+
+
+[dependencyRules]: /imgs/medusa_layers.jpg "Titulo alternativo"
 ***
 
 
