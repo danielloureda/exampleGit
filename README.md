@@ -71,8 +71,6 @@ Con ello se consigue tener un código:
 ***
 
 
-
-
 [dependencyRules]: /imgs/medusa_layers.jpg "Reglas de dependencia"
 [mvpMvcDifferences]: /imgs/mvp_mvc_differences.png "Diferencias entre MVC y MVP"
 [presentationDiagram]: /imgs/presentation_diagram.png "Diagrama de presentación"
