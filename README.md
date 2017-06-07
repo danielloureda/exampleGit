@@ -11,16 +11,40 @@ Para tener una aplicación mantenible, poco acoplada y altamente cohesiva se hac
 - Domain: Contiene los casos de uso, es decir, la lógica de negocio de la aplicación.
 - Data: Se encarga del acceso a datos, bien estén en cloud, en base de datos, en caché...
 
-En la siguiente imagen se puede observar que la capa de dominio es totalmente independiente de las demás. Esto tiene sentido ya que la lógica de dominio no tiene relación con la vista en la que se va a pintar ni con cómo acceder a los datos que se necesitan.
+En la siguiente imagen se puede observar que la capa de dominio es totalmente independiente de las demás. Esto tiene sentido ya que la lógica de dominio no tiene relación con la vista en la que se va a pintar ni con cómo acceder a los datos que se necesitan. La capa da datos es independiente de la capa de aplicación pero conoce a dominio. Por último, app conoce a ambas. Más adelante explicaremos por qué y las ventajas e inconvenientes que tiene.
 
 ![reglas de dependencia][dependencyRules]
 
+A continuación se explican detalladamente cada una de las capas.
 
+## App (presentation)
+La capa de aplicación se encarga de presentar y obtener información al y del usuario, de controlar la navegación entre pantallas y de gestionar la inyección de dependencias.
+Para lo primero se utiliza el patrón de diseño *Model View Presenter* (**MVP**). MVP deriva del ya conocido *Model View Controller* o MVC y permite separar la pura presentación de la lógica derivada de la misma, de manera que todo sobre cómo funciona la interfaz queda separado de cómo se representa. Idealmente, con la misma lógica, podría haber diferentes vistas y podríamos intercambiarlas y todo funcionaría correctamente. A continuación se muestra la diferencia entre MVC y MVP:
+
+![diferencias MVP y MVC][mvpMvcDifferences]
+
+### Presenter
+
+### View
+
+### Model
+
+
+
+
+Aunque no existe una manera única de aplicar este patrón, MEDUSA recomienda seguir las siguientes directrices:
+- **No** es necesario delegar **absolutamente** todo al presenter. Es decir, si la vista tiene que realizar una serie de inicializaciones **puramente visuales** no es necesario que delegue en el presenter.
+- **No** puede haber referencias a componentes nativos de la plataforma en el presenter. De lo contrario estaríamos acoplando el presenter a la forma de mostrar la información.
+
+## Domain
+## Data
+***
 
 
 
 [dependencyRules]: /imgs/medusa_layers.jpg "Reglas de dependencia"
-***
+[mvpMvcDifferences]: /imgs/mvp_mvc_differences.png "Diferencias entre MVC y MVP"
+
 
 
 
