@@ -33,7 +33,7 @@ Normalmente la transformación de un objeto de modelo a un view model se realiza
 
 La vista tiene una referencia al presenter provista mediante inyección de dependencias y es la encargada de establecer en el presenter la referencia a sí misma. Cada vez que ocurra un evento deberá delegar en el presenter y será este el que decida qué hacer.
 
-
+El **navegador** (o *navigator*) es el encargado de controlar el flujo de la aplicación. Ante ciertos eventos el presenter delega en el navigator para que decida qué se tiene que hacer o qué pantalla hay que mostrar.
 
 ![diagrama de presentación][presentationDiagram]
 
