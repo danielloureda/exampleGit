@@ -33,6 +33,8 @@ Normalmente la transformación de un objeto de modelo a un view model se realiza
 
 La vista tiene una referencia al presenter provista mediante inyección de dependencias y es la encargada de establecer en el presenter la referencia a sí misma. Cada vez que ocurra un evento deberá delegar en el presenter y será este el que decida qué hacer.
 
+
+
 ![diagrama de presentación][presentationDiagram]
 
 Aunque no existe una manera única de aplicar este patrón, MEDUSA recomienda seguir las siguientes directrices:
