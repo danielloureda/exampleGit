@@ -7,17 +7,18 @@ MEDUSA es la arquitectura para aplicaciones móviles que se utiliza en el depart
 - Mejora del propio producto: MEDUSA no es un producto cerrado. A medida que se van desarrollando proyectos se van corrigiendo posibles errores y se van incorporando mejoras.
 
 Para tener una aplicación mantenible, poco acoplada y altamente cohesiva se hace necesario separarla en capas:
-- App (presentation).
-- Domain.
-- Data.
+- App (presentation): Se encarga de la interacción con el usuario, de la lógica de vista y de la inyección de dependencias.
+- Domain: Contiene los casos de uso, es decir, la lógica de negocio de la aplicación.
+- Data: Se encarga del acceso a datos, bien estén en cloud, en base de datos, en caché...
 
+En la siguiente imagen se puede observar que la capa de dominio es totalmente independiente de las demás. Esto tiene sentido ya que la lógica de dominio no tiene relación con la vista en la que se va a pintar ni con cómo acceder a los datos que se necesitan.
 ![reglas de dependencia][dependencyRules]
 
 
 
 
 
-[dependencyRules]: /imgs/medusa_layers.jpg "Titulo alternativo"
+[dependencyRules]: /imgs/medusa_layers.jpg "Reglas de dependencia"
 ***
 
 
