@@ -12,6 +12,7 @@ Para tener una aplicación mantenible, poco acoplada y altamente cohesiva se hac
 - Data: Se encarga del acceso a datos, bien estén en cloud, en base de datos, en caché...
 
 En la siguiente imagen se puede observar que la capa de dominio es totalmente independiente de las demás. Esto tiene sentido ya que la lógica de dominio no tiene relación con la vista en la que se va a pintar ni con cómo acceder a los datos que se necesitan.
+
 ![reglas de dependencia][dependencyRules]
 
 
