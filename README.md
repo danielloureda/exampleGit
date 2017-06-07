@@ -19,22 +19,28 @@ A continuación se explican detalladamente cada una de las capas.
 
 ## App (presentation)
 La capa de aplicación se encarga de presentar y obtener información al y del usuario, de controlar la navegación entre pantallas y de gestionar la inyección de dependencias.
-Para lo primero se utiliza el patrón de diseño *Model View Presenter* (**MVP**). MVP deriva del ya conocido *Model View Controller* o MVC y permite separar la pura presentación de la lógica derivada de la misma, de manera que todo sobre cómo funciona la interfaz queda separado de cómo se representa. Idealmente, con la misma lógica, podría haber diferentes vistas y podríamos intercambiarlas y todo funcionaría correctamente. A continuación se muestra la diferencia entre MVC y MVP:
+Para lo primero se utiliza el patrón de diseño *Model View Presenter* (**MVP**). MVP deriva del ya conocido *Model View Controller* o MVC y permite separar la pura presentación de la lógica derivada de la misma, de manera que el cómo funciona la interfaz queda separado del cómo se representa. Idealmente, con la misma lógica, podría haber diferentes vistas para un mismo presenter y podríamos intercambiarlas y todo funcionaría correctamente. A continuación se muestra la diferencia entre MVC y MVP:
 
 ![diferencias MVP y MVC][mvpMvcDifferences]
 
-### Presenter
+El **presenter** contiene toda la lógica **no visual** de la interfaz:
+- Comunica a la interfaz los datos que va a mostrar.
+- Decide qué hacer ante eventos en la interfaz.
+- Es la puerta de salida hacia la capa de dominio y la navegación.
 
-### View
+La **vista** se encarga de saber cómo mostrar la información que le proporciona el presenter. **No** conoce el modelo de negocio, pero sí el **View model**. El view model es una transformación del modelo de negocio que conoce la vista. La vista sabe cómo representar un objeto view model pero no debería saber cómo representar un objeto de negocio.
+Normalmente la transformación de un objeto de modelo a un view model se realiza a través de un **mapper** o de un **wrapper**. Ambos crean un objeto view model de uno de modelo pero, mientras que el primero crea un view model a partir del modelo, el segundo envuelve el objeto del modelo en un view model. En general, utilizaremos el primer método cuando view model y model no tengan mucho que ver y el segundo cuando ambos sean muy parecidos.
 
-### Model
+La vista tiene una referencia al presenter provista mediante inyección de dependencias y es la encargada de establecer en el presenter la referencia a sí misma. Cada vez que ocurra un evento deberá delegar en el presenter y será este el que decida qué hacer.
 
-
-
+![diagrama de presentación][presentationDiagram]
 
 Aunque no existe una manera única de aplicar este patrón, MEDUSA recomienda seguir las siguientes directrices:
 - **No** es necesario delegar **absolutamente** todo al presenter. Es decir, si la vista tiene que realizar una serie de inicializaciones **puramente visuales** no es necesario que delegue en el presenter.
 - **No** puede haber referencias a componentes nativos de la plataforma en el presenter. De lo contrario estaríamos acoplando el presenter a la forma de mostrar la información.
+- **No** es estrictamente necesario tener un view model para cada vista. Dependerá de cada caso si merece la pena crear un view model o no.
+- **No** es obligatorio tener una interfaz para el presenter.
+- **Sí** es obligatorio tener una interfaz para la vista.
 
 ## Domain
 ## Data
@@ -44,6 +50,7 @@ Aunque no existe una manera única de aplicar este patrón, MEDUSA recomienda se
 
 [dependencyRules]: /imgs/medusa_layers.jpg "Reglas de dependencia"
 [mvpMvcDifferences]: /imgs/mvp_mvc_differences.png "Diferencias entre MVC y MVP"
+[presentationDiagram]: /imgs/presentation_diagram.png "Diagrama de presentación"
 
 
 
